@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>传数据test</title>
+
+</head>
+<body>
+
+</body>
+
+<script src="http://img.qianlong.com/templates/qianlong/common/lib/jquery/1.8.3/jquery-1.8.3.min.js"></script>
+<script>
+
+var postdata = {
+    name : '步惊云',
+    sex : 1
+  };
+
+$.ajax({
+  url: 'http://127.0.0.1:9090/setdata',
+  type: 'post',
+  dataType: 'json',
+  data : postdata
+})
+.done(function(data) {
+  console.log(data);
+  console.log("success");
+})
+.fail(function() {
+  console.log("error");
+})
+.always(function() {
+  console.log("complete");
+});
+
+
+
+
+
+</script>
+</html>
